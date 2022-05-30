@@ -6,13 +6,13 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:37:36 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/30 12:06:29 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/30 18:24:45 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_stacks(t_stacks *stacks)
+void	print_stacks(t_stacks *stacks)
 {
 	t_list	*tmp_a;
 	t_list	*tmp_b;
@@ -43,14 +43,14 @@ void print_stacks(t_stacks *stacks)
 
 void	print_lst(t_list *stack)
 {
-
 	printf("STACK PRINT\n");
 	if (stack)
 	{
 		while (stack)
 		{
 			printf("-> Addr %p	Number = %d	Index = %d	Next %p\n",
-				stack, ((t_info *)stack->content)->number, ((t_info *)stack->content)->index, stack->next);
+				stack, ((t_info *)stack->content)->number,
+				((t_info *)stack->content)->index, stack->next);
 			stack = stack->next;
 		}
 	}

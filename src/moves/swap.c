@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:04:04 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/29 21:16:35 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2022/05/30 17:57:15 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	swap_a(t_stacks *stacks)
 	stacks->a->next = tmp->next;
 	tmp->next = stacks->a;
 	stacks->a = tmp;
+	ft_putstr_fd("sa\n", STDOUT_FILENO);
 }
 
 void	swap_b(t_stacks *stacks)
@@ -34,4 +35,5 @@ void	swap_b(t_stacks *stacks)
 	stacks->b->next = tmp->next;
 	tmp->next = stacks->b;
 	stacks->b = tmp;
+	ft_putstr_fd("sb\n", STDOUT_FILENO);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:04:39 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/29 21:11:41 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2022/05/30 17:57:15 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	rotate_a(t_stacks *stacks)
 	tmp->next = stacks->a;
 	tmp->next->next = NULL;
 	stacks->a = first;
+	ft_putstr_fd("ra\n", STDOUT_FILENO);
 }
 
 void	rotate_b(t_stacks *stacks)
@@ -40,4 +41,5 @@ void	rotate_b(t_stacks *stacks)
 	tmp->next = stacks->b;
 	tmp->next->next = NULL;
 	stacks->b = first;
+	ft_putstr_fd("rb\n", STDOUT_FILENO);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 20:12:44 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/29 21:07:17 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2022/05/30 17:57:15 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	push_a(t_stacks *stacks)
 		stacks->a->next = NULL;
 		stacks->b = tmp;
 	}
+	ft_putstr_fd("pa\n", STDOUT_FILENO);
 }
 
 void	push_b(t_stacks *stacks)
@@ -54,4 +55,5 @@ void	push_b(t_stacks *stacks)
 		stacks->b->next = NULL;
 		stacks->a = tmp;
 	}
+	ft_putstr_fd("pb\n", STDOUT_FILENO);
 }

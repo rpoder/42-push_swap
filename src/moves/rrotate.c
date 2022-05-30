@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rrotate.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:04:39 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/29 21:15:18 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2022/05/30 17:59:29 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,16 @@ void	rrotate_a(t_stacks *stacks)
 	if (!stacks || !stacks->a || !stacks->a->next)
 		return ;
 	if (!stacks->a->next->next)
-		swap_b(stacks);
+	{
+		swap_a(stacks);
+		return ;
+	}
 	tmp = ft_lstbeflast(stacks->a);
 	last = ft_lstlast(stacks->a);
 	last->next = stacks->a;
 	stacks->a = last;
 	tmp->next = NULL;
+	ft_putstr_fd("rra\n", STDOUT_FILENO);
 }
 
 void	rrotate_b(t_stacks *stacks)
@@ -36,10 +40,14 @@ void	rrotate_b(t_stacks *stacks)
 	if (!stacks || !stacks->b || !stacks->b->next)
 		return ;
 	if (!stacks->b->next->next)
+	{
 		swap_b(stacks);
+		return ;
+	}
 	tmp = ft_lstbeflast(stacks->b);
 	last = ft_lstlast(stacks->b);
 	last->next = stacks->b;
 	stacks->b = last;
 	tmp->next = NULL;
+	ft_putstr_fd("rrb\n", STDOUT_FILENO);
 }
