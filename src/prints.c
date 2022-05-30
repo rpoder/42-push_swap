@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:37:36 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/30 18:24:45 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 00:52:55 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,15 @@ void	print_stacks(t_stacks *stacks)
 	{
 		if (tmp_a)
 		{
-			printf("%d", ((t_info *)tmp_a->content)->number);
+			printf("%d    ", ((t_info *)tmp_a->content)->number);
+			printf("%d", ((t_info *)tmp_a->content)->index);
 			tmp_a = tmp_a->next;
 		}
 		printf("		");
 		if (tmp_b)
 		{
-			printf("%d", ((t_info *)tmp_b->content)->number);
+			printf("%d    ", ((t_info *)tmp_b->content)->number);
+			printf("%d", ((t_info *)tmp_b->content)->index);
 			tmp_b = tmp_b->next;
 		}
 		printf("\n");
@@ -73,17 +75,17 @@ void	print_size(t_stacks *stacks)
 	printf("stacks->size_b = %d\n\n", stacks->size_b);
 }
 
-void	print_pos(t_op *op)
-{
-	if (!op)
-	{
-		printf("The POS you are trying to print does not exist.\n");
-		return ;
-	}
-	printf("POS OP\n");
-	printf("op->pos_a = %d\n", op->pos_a);
-	printf("op->pos_b = %d\n\n", op->pos_b);
-}
+// void	print_pos(t_op *op)
+// {
+// 	if (!op)
+// 	{
+// 		printf("The POS you are trying to print does not exist.\n");
+// 		return ;
+// 	}
+// 	printf("POS OP\n");
+// 	printf("op->pos_a = %d\n", op->pos_a);
+// 	printf("op->pos_b = %d\n\n", op->pos_b);
+// }
 
 void	print_op(t_op *op)
 {
@@ -99,5 +101,4 @@ void	print_op(t_op *op)
 	printf("op->rra = %d\n", op->rra);
 	printf("op->rrb = %d\n", op->rrb);
 	printf("op->rrr = %d\n", op->rrr);
-	printf("op->sum = %d\n\n", op->sum);
 }

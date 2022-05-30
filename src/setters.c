@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:44:05 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/30 18:20:17 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 00:52:31 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,11 @@ t_op	*set_t_op(void)
 	op = (t_op *)malloc(sizeof(t_op));
 	if (!op)
 		return (NULL);
-	op->pos_a = 0;
-	op->pos_b = 0;
 	op->ra = 0;
 	op->rb = 0;
 	op->rr = 0;
 	op->rra = 0;
 	op->rrb = 0;
 	op->rrr = 0;
-	op->sum = INT_MAX;
 	return (op);
 }

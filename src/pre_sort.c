@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:26:01 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/30 18:31:43 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/30 23:44:14 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	pre_sort(t_stacks *stacks)
 	indexing_a(stacks->a);
 	push_all_to_b(stacks);
 	push_a(stacks);
+	//push_a(stacks);
 	return (1);
 }
 

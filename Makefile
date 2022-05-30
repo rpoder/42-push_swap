@@ -6,7 +6,7 @@
 #    By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 17:38:32 by rpoder            #+#    #+#              #
-#    Updated: 2022/05/30 10:48:33 by rpoder           ###   ########.fr        #
+#    Updated: 2022/05/31 00:46:57 by rpoder           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRCS				:=	main.c \
 						prints.c \
 						setters.c \
 						getters.c \
-						reinitialisations.c \
 						fillers.c \
 						libft_addons.c \
 						moves/push.c \
@@ -33,6 +32,8 @@ SRCS				:=	main.c \
 						pre_sort.c \
 						main_sort.c \
 						calculate_rotates.c \
+						apply_rotates.c \
+						execute.c \
 
 CC					:=	cc
 RM					:=	rm

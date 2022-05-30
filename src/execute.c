@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reinitialisations.c                                :+:      :+:    :+:   */
+/*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 10:46:42 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/30 18:20:03 by rpoder           ###   ########.fr       */
+/*   Created: 2022/05/30 23:00:10 by rpoder            #+#    #+#             */
+/*   Updated: 2022/05/30 23:01:11 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reinit_op(t_op *op)
+void	execute_moves(t_stacks *stacks, t_op *op)
 {
-	op->ra = 0;
-	op->rb = 0;
-	op->rr = 0;
-	op->rra = 0;
-	op->rrb = 0;
-	op->rrr = 0;
-	op->sum = INT_MAX;
+	if (!op)
+		return ;
+	while (op->ra)
+	{
+		rotate_a(stacks);
+		op->ra--;
+	}
+	while (op->rb)
+	{
+		rotate_b(stacks);
+		op->rb--;
+	}
+	while (op->rra)
+	{
+		rrotate_a(stacks);
+		op->rra--;
+	}
+	while (op->rrb)
+	{
+		rrotate_b(stacks);
+		op->rrb--;
+	}
+	push_a(stacks);
 }

@@ -1,53 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_rotates.c                                :+:      :+:    :+:   */
+/*   apply_rotates.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 10:36:58 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/30 22:47:17 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 00:48:16 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	a_up_b_down(t_stacks *stacks, int pos_a, int pos_b)
+void	apply_a_up_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b)
 {
-	int	ra;
-	int	rrb;
-
-	ra = pos_a;
-	rrb = stacks->size_b - pos_b;
-	return (ra + rrb);
+	op->ra = pos_a;
+	op->rrb = stacks->size_b - pos_b;
 }
 
-int	a_up_b_up(t_stacks *stacks, int pos_a, int pos_b)
+void	apply_a_up_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b)
 {
-	int	ra;
-	int	rb;
-
-	ra = pos_a;
-	rb = pos_b;
-	return (ra + rb);
+	op->ra = pos_a;
+	op->rb = pos_b;
 }
 
-int	a_down_b_up(t_stacks *stacks, int pos_a, int pos_b)
+void	apply_a_down_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b)
 {
-	int	rra;
-	int	rb;
-
-	rra = stacks->size_a - pos_a;
-	rb = pos_b;
-	return (rra + rb);
+	op->rra = stacks->size_a - pos_a;
+	op->rb = pos_b;
 }
 
-int	a_down_b_down(t_stacks *stacks, int pos_a, int pos_b)
+void	apply_a_down_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b)
 {
-	int	rra;
-	int	rrb;
-
-	rra = stacks->size_a - pos_a;
-	rrb = stacks->size_b - pos_b;
-	return (rra + rrb);
+	op->rra = stacks->size_a - pos_a;
+	op->rrb = stacks->size_b - pos_b;
 }

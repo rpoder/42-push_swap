@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/30 18:24:12 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 00:56:16 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,12 @@ typedef struct s_stacks
 
 typedef struct s_op
 {
-	int	pos_a;
-	int	pos_b;
 	int	ra;
 	int	rb;
 	int	rr;
 	int	rra;
 	int	rrb;
 	int	rrr;
-	int	sum;
 }	t_op;
 
 // Libft Addons
@@ -56,9 +53,6 @@ t_op		*set_t_op(void);
 
 // Getters
 int			get_stack_size(t_list *stack);
-
-// Reinitialisations
-void		reinit_op(t_op *op);
 
 // Prints
 void		print_stacks(t_stacks *stacks);
@@ -87,13 +81,20 @@ void		push_all_to_b(t_stacks *stacks);
 
 // Main-sort
 int			main_sort(t_stacks *stacks);
-int			pos_of_next_greater_in_a(t_stacks *stacks, int value);
+
+// Execute
+void		execute_moves(t_stacks *stacks, t_op *op);
 
 // Calculate rotates
-int			a_up_b_down(t_stacks *stacks, t_op *op);
-int			a_up_b_up(t_stacks *stacks, t_op *op);
-int			a_down_b_up(t_stacks *stacks, t_op *op);
-int			a_down_b_down(t_stacks *stacks, t_op *op);
+int			a_up_b_down(t_stacks *stacks, int pos_a, int pos_b);
+int			a_up_b_up(t_stacks *stacks, int pos_a, int pos_b);
+int			a_down_b_up(t_stacks *stacks, int pos_a, int pos_b);
+int			a_down_b_down(t_stacks *stacks, int pos_a, int pos_b);
 
+// Apply rotates
+void		apply_a_up_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
+void		apply_a_up_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
+void		apply_a_down_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
+void		apply_a_down_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
 
 #endif
