@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getters.c                                          :+:      :+:    :+:   */
+/*   reinitialisations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/29 20:06:40 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/30 11:42:07 by rpoder           ###   ########.fr       */
+/*   Created: 2022/05/30 10:46:42 by rpoder            #+#    #+#             */
+/*   Updated: 2022/05/30 10:47:43 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_stack_size(t_list *stack)
+void	reinit_op(t_op *op)
 {
-	int		count;
-	t_list	*tmp;
-
-	count = 0;
-	tmp = stack;
-	if (tmp)
-	{
-		while (tmp)
-		{
-			count++;
-			tmp = tmp->next;
-		}
-	}
-	return (count);
+	op->ra = 0;
+	op->rb = 0;
+	op->rr = 0;
+	op->rra = 0;
+	op->rrb = 0;
+	op->rrr = 0;
+	op->sum = INT_MAX;
 }
