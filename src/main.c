@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:29 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 16:30:25 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 16:48:44 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int argc, char **argv)
 	t_stacks	*stacks;
 	int			ret;
 
-	(void) argv;
 	if (argc < 2)
 		return (0);
 	stacks = set_stacks();
@@ -27,11 +26,9 @@ int	main(int argc, char **argv)
 	if (!ret)
 	{
 		free_stacks(stacks);
-		free(stacks);
 		return (0);
 	}
 	last_sort(stacks);
+	print_stacks(stacks);
 	free_stacks(stacks);
-	free(stacks);
-	//print_stacks(stacks);
 	}
