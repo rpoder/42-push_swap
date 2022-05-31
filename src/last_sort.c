@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute.c                                          :+:      :+:    :+:   */
+/*   last_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 23:00:10 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/31 16:36:29 by rpoder           ###   ########.fr       */
+/*   Created: 2022/05/31 14:43:01 by rpoder            #+#    #+#             */
+/*   Updated: 2022/05/31 14:59:54 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	execute_moves(t_stacks *stacks, t_op *op)
+void	last_sort(t_stacks *stacks)
 {
-	if (!op)
-		return ;
-	while (op->ra)
+	int		pos_a;
+	t_list	*tmp_a;
+	int		size_a;
+
+	tmp_a = stacks->a;
+	while (tmp_a)
 	{
-		rotate_a(stacks);
-		op->ra--;
+		if (((t_info *)tmp_a->content)->index == 0)
+			break ;
+		tmp_a = tmp_a->next;
+		pos_a++;
 	}
-	while (op->rb)
+	size_a = get_stack_size(stacks->a);
+	if ((size_a / 2) > pos_a)
 	{
-		rotate_b(stacks);
-		op->rb--;
+		while (((t_info *)stacks->a->content)->index != 0)
+			rotate_a(stacks);
 	}
-	while (op->rra)
+	else
 	{
-		rrotate_a(stacks);
-		op->rra--;
+		while (((t_info *)stacks->a->content)->index != 0)
+			rrotate_a(stacks);
 	}
-	while (op->rrb)
-	{
-		rrotate_b(stacks);
-		op->rrb--;
-	}
-	push_a(stacks);
 }

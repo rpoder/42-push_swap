@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 00:56:16 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 16:22:47 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,11 @@ void		apply_a_up_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
 void		apply_a_up_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
 void		apply_a_down_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
 void		apply_a_down_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
+
+// Last Sort
+
+// Frees
+void	free_stacks(t_stacks *stacks);
+void	del_t_info(void *to_delete);
 
 #endif

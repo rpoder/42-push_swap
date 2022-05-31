@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute.c                                          :+:      :+:    :+:   */
+/*   frees.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 23:00:10 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/31 16:36:29 by rpoder           ###   ########.fr       */
+/*   Created: 2022/05/31 15:42:22 by rpoder            #+#    #+#             */
+/*   Updated: 2022/05/31 16:23:50 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	execute_moves(t_stacks *stacks, t_op *op)
+void	free_stacks(t_stacks *stacks)
 {
-	if (!op)
-		return ;
-	while (op->ra)
-	{
-		rotate_a(stacks);
-		op->ra--;
-	}
-	while (op->rb)
-	{
-		rotate_b(stacks);
-		op->rb--;
-	}
-	while (op->rra)
-	{
-		rrotate_a(stacks);
-		op->rra--;
-	}
-	while (op->rrb)
-	{
-		rrotate_b(stacks);
-		op->rrb--;
-	}
-	push_a(stacks);
+	ft_lstclear(&stacks->a, &del_t_info);
+	ft_lstclear(&stacks->b, &del_t_info);
+}
+
+void	del_t_info(void *to_delete)
+{
+	free((t_info *)to_delete);
 }

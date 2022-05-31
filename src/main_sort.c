@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 10:17:45 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/31 00:56:56 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 16:42:58 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,6 @@ t_op	*generate_operations(t_stacks *stacks, int cas, int pos_a, int pos_b)
 	t_op	*op;
 
 	op = set_t_op();
-	printf("CASE = %d\n", cas);
-	printf("pos_a = %d\n", pos_a);
-	printf("pos_b = %d\n", pos_b);
 	if (cas == 1)
 		apply_a_up_b_down(stacks, op, pos_a, pos_b);
 	else if (cas == 2)
@@ -102,7 +99,6 @@ t_op	*generate_operations(t_stacks *stacks, int cas, int pos_a, int pos_b)
 		apply_a_down_b_up(stacks, op, pos_a, pos_b);
 	else if (cas == 4)
 		apply_a_down_b_down(stacks, op, pos_a, pos_b);
-	print_op(op);
 	return (op);
 }
 
@@ -120,33 +116,39 @@ int	main_sort(t_stacks *stacks)
 	int		best_number_of_moves;
 	int		cas;
 
-	print_stacks(stacks);
-	op = set_t_op();
-	pos_b = 0;
-	tmp_a = stacks->a;
-	tmp_b = stacks->b;
-	stacks->size_a = get_stack_size(stacks->a);
-	stacks->size_b = get_stack_size(stacks->b);
-	best_number_of_moves = INT_MAX;
-	while (pos_b < stacks->size_b)
+	// op = set_t_op();
+	// if (!op)
+	// 	return (0);
+	while (stacks->b)
 	{
-		pos_a = get_closest_position(stacks, ((t_info *)tmp_b->content)->index);
-		cas = get_best_case(stacks, pos_a, pos_b);
-		number_of_moves = get_number_moves(cas, stacks, pos_a, pos_b);
-		if (number_of_moves < best_number_of_moves)
-		{
-			printf("better\n");
-			best_case = cas;
-			best_pos_a = pos_a;
-			best_pos_b = pos_b;
-			best_number_of_moves = number_of_moves;
-		}
-		pos_b++;
-		tmp_b = tmp_b->next;
+		pos_b = 0;
+		tmp_a = stacks->a;
+		tmp_b = stacks->b;
+
+		stacks->size_a = get_stack_size(stacks->a);
+		stacks->size_b = get_stack_size(stacks->b);
+		best_number_of_moves = INT_MAX;
+
+			while (pos_b < stacks->size_b)
+			{
+				pos_a = get_closest_position(stacks, ((t_info *)tmp_b->content)->index);
+				cas = get_best_case(stacks, pos_a, pos_b);
+				number_of_moves = get_number_moves(cas, stacks, pos_a, pos_b);
+				if (number_of_moves < best_number_of_moves)
+				{
+					//printf("better\n");
+					best_case = cas;
+					best_pos_a = pos_a;
+					best_pos_b = pos_b;
+					best_number_of_moves = number_of_moves;
+				}
+				pos_b++;
+				tmp_b = tmp_b->next;
+			}
+		op = generate_operations(stacks, best_case, best_pos_a, best_pos_b);
+		execute_moves(stacks, op);
+		free (op);
 	}
-	printf("best nb of moves is %d %d %d\n\n", best_number_of_moves, best_pos_a, best_pos_b);
-	op = generate_operations(stacks, best_case, best_pos_a, best_pos_b);
-	execute_moves(stacks, op);
-	print_stacks(stacks);
+	//free(op);
 	return (0);
 }
