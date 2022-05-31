@@ -6,7 +6,7 @@
 #    By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 17:38:32 by rpoder            #+#    #+#              #
-#    Updated: 2022/05/31 16:06:54 by rpoder           ###   ########.fr        #
+#    Updated: 2022/05/31 18:23:24 by rpoder           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SRCS				:=	main.c \
 CC					:=	cc
 RM					:=	rm
 
-#CCFLAGS				:=	-Wall -Wextra -Werror -g3
+CCFLAGS				:=	-Wall -Wextra -Werror -g3
 #OPTIMISATION_FLAG	:=	-O3
 
 NAME				:=	$(PROGNAME)

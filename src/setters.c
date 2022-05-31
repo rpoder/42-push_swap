@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:44:05 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 00:52:31 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 18:20:46 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_list	*set_t_list(int number)
 	new_tinfo->number = number;
 	new_tinfo->index = 0;
 	new->content = new_tinfo;
+	new->next = NULL;
 	return (new);
 }
 
@@ -57,4 +58,17 @@ t_op	*set_t_op(void)
 	op->rrb = 0;
 	op->rrr = 0;
 	return (op);
+}
+
+t_best_case	*set_t_best_case(void)
+{
+	t_best_case	*b_case;
+
+	b_case = malloc(sizeof(t_best_case));
+	if (!b_case)
+		return (NULL);
+	b_case->cas = 0;
+	b_case->pos_a = 0;
+	b_case->pos_b = 0;
+	return (b_case);
 }

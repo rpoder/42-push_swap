@@ -6,10 +6,9 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 16:22:47 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 18:17:50 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -33,6 +32,13 @@ typedef struct s_stacks
 	int		size_b;
 }	t_stacks;
 
+typedef struct s_best_case
+{
+	int	cas;
+	int	pos_a;
+	int	pos_b;
+}	t_best_case;
+
 typedef struct s_op
 {
 	int	ra;
@@ -48,8 +54,9 @@ t_list		*ft_lstbeflast(t_list *lst);
 
 // Setters
 t_stacks	*set_stacks(void);
-t_list		*set_t_list(int	number);
+t_list		*set_t_list(int number);
 t_op		*set_t_op(void);
+t_best_case	*set_t_best_case(void);
 
 // Getters
 int			get_stack_size(t_list *stack);
@@ -62,7 +69,7 @@ void		print_pos(t_op *op);
 void		print_size(t_stacks *stacks);
 
 // Fillers
-t_list		*fill_stack_a(t_stacks	*stacks, char **argv);
+t_list		*fill_stack_a(char **argv);
 
 // Moves
 void		push_a(t_stacks *stacks);
@@ -81,6 +88,11 @@ void		push_all_to_b(t_stacks *stacks);
 
 // Main-sort
 int			main_sort(t_stacks *stacks);
+int			get_best_case(t_stacks *stacks, int pos_a, int pos_b);
+int			get_closest_pos(t_stacks *stacks, int index_b);
+int			get_number_moves(int cas, t_stacks *stacks, int pos_a, int pos_b);
+t_op		*generate_op(t_stacks *stacks, int cas, int pos_a, int pos_b);
+int			find_best_option(t_stacks *stacks, int b_nb_of_moves, t_best_case *b_case);
 
 // Execute
 void		execute_moves(t_stacks *stacks, t_op *op);
@@ -98,6 +110,7 @@ void		apply_a_down_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
 void		apply_a_down_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
 
 // Last Sort
+void	last_sort(t_stacks *stacks);
 
 // Frees
 void	free_stacks(t_stacks *stacks);

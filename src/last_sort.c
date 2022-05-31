@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:43:01 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/31 14:59:54 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 18:23:07 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	last_sort(t_stacks *stacks)
 	int		size_a;
 
 	tmp_a = stacks->a;
+	pos_a = 0;
 	while (tmp_a)
 	{
 		if (((t_info *)tmp_a->content)->index == 0)

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   fillers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 19:05:06 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/29 19:55:26 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2022/05/31 18:16:58 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*fill_stack_a(t_stacks	*stacks, char **argv)
+t_list	*fill_stack_a(char **argv)
 {
 	t_list	*a;
 	t_list	*new;

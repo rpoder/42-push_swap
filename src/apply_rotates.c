@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 10:36:58 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/31 00:48:16 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 18:24:14 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	apply_a_up_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b)
 
 void	apply_a_up_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b)
 {
+	(void) stacks;
 	op->ra = pos_a;
 	op->rb = pos_b;
 }
