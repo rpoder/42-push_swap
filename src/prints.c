@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:37:36 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 00:52:55 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 18:28:01 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ void	print_stacks(t_stacks *stacks)
 
 	tmp_a = stacks->a;
 	tmp_b = stacks->b;
-	printf("------------------------\n");
 	printf("A		B\n");
 	printf("%p	%p\n", stacks->a, stacks->b);
-	printf("------------------------\n");
 	while (tmp_a || tmp_b)
 	{
 		if (tmp_a)
@@ -74,18 +72,6 @@ void	print_size(t_stacks *stacks)
 	printf("stacks->size_a = %d\n", stacks->size_a);
 	printf("stacks->size_b = %d\n\n", stacks->size_b);
 }
-
-// void	print_pos(t_op *op)
-// {
-// 	if (!op)
-// 	{
-// 		printf("The POS you are trying to print does not exist.\n");
-// 		return ;
-// 	}
-// 	printf("POS OP\n");
-// 	printf("op->pos_a = %d\n", op->pos_a);
-// 	printf("op->pos_b = %d\n\n", op->pos_b);
-// }
 
 void	print_op(t_op *op)
 {
