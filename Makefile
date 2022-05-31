@@ -6,7 +6,7 @@
 #    By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 17:38:32 by rpoder            #+#    #+#              #
-#    Updated: 2022/05/31 18:23:24 by rpoder           ###   ########.fr        #
+#    Updated: 2022/05/31 18:44:49 by rpoder           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS				:=	main.c \
 						moves/swap.c \
 						pre_sort.c \
 						main_sort.c \
+						main_sort_utils.c \
 						calculate_rotates.c \
 						apply_rotates.c \
 						execute.c \
@@ -79,7 +80,7 @@ fclean				:	clean
 re					:	fclean $(NAME)
 
 norm				:
-	norminette
+	norminette ./src ./includes ./libftprintf
 
 push				:
 	$(MAKE) fclean

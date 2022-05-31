@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 20:12:44 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/30 17:57:15 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 18:40:49 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	push_a(t_stacks *stacks)
 	t_list	*tmp;
 
 	if (!stacks || !stacks->b)
-		return;
+		return ;
 	if (stacks->a)
 	{
 		tmp = stacks->b->next;
@@ -40,7 +40,7 @@ void	push_b(t_stacks *stacks)
 	t_list	*tmp;
 
 	if (!stacks || !stacks->a)
-		return;
+		return ;
 	if (stacks->b)
 	{
 		tmp = stacks->a->next;

@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 18:17:50 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/05/31 18:41:33 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ int			get_best_case(t_stacks *stacks, int pos_a, int pos_b);
 int			get_closest_pos(t_stacks *stacks, int index_b);
 int			get_number_moves(int cas, t_stacks *stacks, int pos_a, int pos_b);
 t_op		*generate_op(t_stacks *stacks, int cas, int pos_a, int pos_b);
-int			find_best_option(t_stacks *stacks, int b_nb_of_moves, t_best_case *b_case);
+int			find_best_option(t_stacks *stacks, int b_nb_of_moves,
+				t_best_case *b_case);
 
 // Execute
 void		execute_moves(t_stacks *stacks, t_op *op);
@@ -107,13 +108,14 @@ int			a_down_b_down(t_stacks *stacks, int pos_a, int pos_b);
 void		apply_a_up_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
 void		apply_a_up_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
 void		apply_a_down_b_up(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
-void		apply_a_down_b_down(t_stacks *stacks, t_op *op, int pos_a, int pos_b);
+void		apply_a_down_b_down(t_stacks *stacks, t_op *op, int pos_a,
+				int pos_b);
 
 // Last Sort
-void	last_sort(t_stacks *stacks);
+void		last_sort(t_stacks *stacks);
 
 // Frees
-void	free_stacks(t_stacks *stacks);
-void	del_t_info(void *to_delete);
+void		free_stacks(t_stacks *stacks);
+void		del_t_info(void *to_delete);
 
 #endif

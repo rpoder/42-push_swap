@@ -1,4 +1,5 @@
 #!/bin/bash
+#sh tester.sh 500 > log 
 make
 #make bonus
 gcc generator.c -o generateur
