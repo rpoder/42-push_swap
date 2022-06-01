@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+         #
+#    By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 23:02:14 by rpoder            #+#    #+#              #
-#    Updated: 2022/05/29 18:28:11 by ronanpoder       ###   ########.fr        #
+#    Updated: 2022/06/01 17:10:34 by rpoder           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCDIR = ./src/
 
 SRCS =	$(addprefix $(SRCDIR), \
 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_tolower.c ft_toupper.c \
-	ft_strlen.c ft_strchr.c \
+	ft_strlen.c ft_strchr.c ft_abs.c \
 	ft_strchr.c ft_atoi.c ft_memset.c \
 	ft_bzero.c ft_memmove.c ft_memcpy.c ft_strlcpy.c ft_strnstr.c ft_strncmp.c ft_substr.c \
 	ft_strdup.c ft_calloc.c ft_strlcat.c ft_strjoin.c ft_strtrim.c ft_strrchr.c ft_memchr.c ft_memcmp.c \

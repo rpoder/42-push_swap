@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/01 15:49:06 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/01 16:20:49 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void		push_a(t_stacks *stacks);
 void		push_b(t_stacks *stacks);
 void		rotate_a(t_stacks *stacks);
 void		rotate_b(t_stacks *stacks);
+void		rotate_both(t_stacks *stacks);
 void		rrotate_a(t_stacks *stacks);
 void		rrotate_b(t_stacks *stacks);
 void		swap_a(t_stacks *stacks);

@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:04:39 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/31 18:40:36 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/01 16:59:03 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@ void	rrotate_b(t_stacks *stacks)
 	stacks->b = last;
 	tmp->next = NULL;
 	ft_putstr_fd("rrb\n", STDOUT_FILENO);
+}
+
+void	rrotate_both(t_stacks *stacks)
+{
+	rrotate_a(stacks);
+	rrotate_b(stacks);
 }
