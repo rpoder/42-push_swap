@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:29 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 18:25:59 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/01 15:53:57 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,18 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
+	if (!check_args(argv + 1))
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (0);
+	}
 	stacks = set_stacks();
 	stacks->a = fill_stack_a(argv);
+	if (check_double(stacks->a) || check_is_sorted(stacks->a))
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (0);
+	}
 	pre_sort(stacks);
 	ret = main_sort(stacks);
 	if (!ret)

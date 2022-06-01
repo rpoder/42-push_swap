@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 18:41:33 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/01 15:49:06 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,16 @@ typedef struct s_op
 	int	rrr;
 }	t_op;
 
+// Checks
+int			check_args(char **argv);
+int			check_sign(char *arg);
+int			ft_is_int(long int num);
+int			check_double(t_list *stack);
+int			check_is_sorted(t_list *stack);
+
 // Libft Addons
 t_list		*ft_lstbeflast(t_list *lst);
+long int	ft_atol(char *s);
 
 // Setters
 t_stacks	*set_stacks(void);

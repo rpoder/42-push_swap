@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:13:39 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/30 18:18:24 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/01 15:25:58 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,29 @@ t_list	*ft_lstbeflast(t_list *lst)
 	while (tmp->next->next != NULL)
 		tmp = tmp->next;
 	return (tmp);
+}
+
+long int	ft_atol(char *s)
+{
+	long int		res;
+	int				neg;
+	int				i;
+
+	res = 0;
+	neg = 1;
+	i = 0;
+	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
+		i++;
+	if (s[i] == '+' || s[i] == '-')
+	{
+		if (s[i] == '-')
+			neg = neg * -1;
+		i++;
+	}
+	while (ft_isdigit(s[i]))
+	{
+		res = res * 10 + ((long int) s[i] - 48);
+		i++;
+	}
+	return ((long int)res * neg);
 }

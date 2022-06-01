@@ -6,7 +6,7 @@
 #    By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 17:38:32 by rpoder            #+#    #+#              #
-#    Updated: 2022/05/31 18:44:49 by rpoder           ###   ########.fr        #
+#    Updated: 2022/06/01 15:25:21 by rpoder           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ SRCDIR				:=	./src
 OBJDIR				:=	./obj
 
 SRCS				:=	main.c \
+						checks/checks.c \
+						checks/checks_stacks.c \
 						prints.c \
 						setters.c \
 						getters.c \
