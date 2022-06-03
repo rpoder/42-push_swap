@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 10:36:58 by rpoder            #+#    #+#             */
-/*   Updated: 2022/06/01 17:12:43 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 14:49:25 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	a_up_b_up(t_stacks *stacks, int pos_a, int pos_b)
 {
 	int	ra;
 	int	rb;
-	int	rr;
 
 	(void) stacks;
 	ra = pos_a;

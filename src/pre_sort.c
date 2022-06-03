@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:26:01 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/01 16:17:03 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/01 17:25:09 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void	push_all_to_b(t_stacks *stacks)
 			else
 			{
 				push_b(stacks);
-				rotate_b(stacks);
+				rotate_b(stacks, 1);
 			}
 		}
 		else
 		{
-			rotate_a(stacks);
+			rotate_a(stacks, 1);
 		}
 	}
 }

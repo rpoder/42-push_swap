@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:44:05 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 18:20:46 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:14:17 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,8 @@ t_op	*set_t_op(void)
 		return (NULL);
 	op->ra = 0;
 	op->rb = 0;
-	op->rr = 0;
 	op->rra = 0;
 	op->rrb = 0;
-	op->rrr = 0;
 	return (op);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/01 16:20:49 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:13:35 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,8 @@ typedef struct s_op
 {
 	int	ra;
 	int	rb;
-	int	rr;
 	int	rra;
 	int	rrb;
-	int	rrr;
 }	t_op;
 
 // Checks
@@ -82,11 +80,12 @@ t_list		*fill_stack_a(char **argv);
 // Moves
 void		push_a(t_stacks *stacks);
 void		push_b(t_stacks *stacks);
-void		rotate_a(t_stacks *stacks);
-void		rotate_b(t_stacks *stacks);
+void		rotate_a(t_stacks *stacks, int print);
+void		rotate_b(t_stacks *stacks, int print);
 void		rotate_both(t_stacks *stacks);
-void		rrotate_a(t_stacks *stacks);
-void		rrotate_b(t_stacks *stacks);
+void		rrotate_a(t_stacks *stacks, int print);
+void		rrotate_b(t_stacks *stacks, int print);
+void		rrotate_both(t_stacks *stacks);
 void		swap_a(t_stacks *stacks);
 void		swap_b(t_stacks *stacks);
 

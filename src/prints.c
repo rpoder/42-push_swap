@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:37:36 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 18:28:01 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:14:00 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,6 @@ void	print_op(t_op *op)
 	printf("OP\n");
 	printf("op->ra = %d\n", op->ra);
 	printf("op->rb = %d\n", op->rb);
-	printf("op->rr = %d\n", op->rr);
 	printf("op->rra = %d\n", op->rra);
 	printf("op->rrb = %d\n", op->rrb);
-	printf("op->rrr = %d\n", op->rrr);
 }

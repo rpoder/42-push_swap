@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:43:01 by rpoder            #+#    #+#             */
-/*   Updated: 2022/05/31 18:23:07 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:04:57 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	last_sort(t_stacks *stacks)
 	if ((size_a / 2) > pos_a)
 	{
 		while (((t_info *)stacks->a->content)->index != 0)
-			rotate_a(stacks);
+			rotate_a(stacks, 1);
 	}
 	else
 	{
 		while (((t_info *)stacks->a->content)->index != 0)
-			rrotate_a(stacks);
+			rrotate_a(stacks, 1);
 	}
 }
