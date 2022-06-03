@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 10:17:45 by rpoder            #+#    #+#             */
-/*   Updated: 2022/06/01 17:21:12 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:29:05 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,6 @@ int	main_sort(t_stacks *stacks)
 		op = generate_op(stacks, b_case->cas, b_case->pos_a, b_case->pos_b);
 		if (!op)
 			return (0);
-		//print_op(op);
 		execute_moves(stacks, op);
 		free (op);
 	}

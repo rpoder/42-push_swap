@@ -6,22 +6,37 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 23:00:10 by rpoder            #+#    #+#             */
-/*   Updated: 2022/06/03 15:08:04 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 16:53:13 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	execute_moves(t_stacks *stacks, t_op *op)
+static void	execute_rr(t_stacks *stacks, t_op *op)
 {
-	if (!op)
-		return ;
 	while (op->ra && op->rb)
 	{
 		rotate_both(stacks);
 		op->ra--;
 		op->rb--;
 	}
+}
+
+static void	execute_rrr(t_stacks *stacks, t_op *op)
+{
+	while (op->rra && op->rrb)
+	{
+		rrotate_both(stacks);
+		op->rra--;
+		op->rrb--;
+	}
+}
+
+void	execute_moves(t_stacks *stacks, t_op *op)
+{
+	if (!op)
+		return ;
+	execute_rr(stacks, op);
 	while (op->ra)
 	{
 		rotate_a(stacks, 1);
@@ -32,12 +47,7 @@ void	execute_moves(t_stacks *stacks, t_op *op)
 		rotate_b(stacks, 1);
 		op->rb--;
 	}
-	while (op->rra && op->rrb)
-	{
-		rrotate_both(stacks);
-		op->rra--;
-		op->rrb--;
-	}
+	execute_rrr(stacks, op);
 	while (op->rra)
 	{
 		rrotate_a(stacks, 1);

@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:13:39 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/01 15:25:58 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 16:28:31 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,17 @@ long int	ft_atol(char *s)
 		i++;
 	}
 	return ((long int)res * neg);
+}
+
+void	ft_free_double_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 }

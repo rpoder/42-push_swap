@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 19:05:06 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/05/31 18:16:58 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/03 16:46:06 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*fill_stack_a(char **argv)
 	t_list	*new;
 	int		i;
 
-	i = 1;
+	i = 0;
 	a = set_t_list(ft_atoi(argv[i]));
 	i++;
 	while (argv[i])
