@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:26:01 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/01 17:25:09 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/04 13:48:37 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	pre_sort(t_stacks *stacks)
 {
 	indexing_a(stacks->a);
 	push_all_to_b(stacks);
-	push_a(stacks);
+	//push_a(stacks);
 	return (1);
 }
 
@@ -27,9 +27,9 @@ void	push_all_to_b(t_stacks *stacks)
 
 	max = get_stack_size(stacks->a) - 1;
 	median = max / 2;
-	while (stacks->a->next)
+	while (stacks->a->next->next)
 	{
-		if (((t_info *)stacks->a->content)->index != max)
+		if (((t_info *)stacks->a->content)->index != max && ((t_info *)stacks->a->content)->index != median)
 		{
 			if (((t_info *)stacks->a->content)->index >= median)
 				push_b(stacks);
@@ -43,6 +43,7 @@ void	push_all_to_b(t_stacks *stacks)
 		{
 			rotate_a(stacks, 1);
 		}
+		//print_stacks(stacks);
 	}
 }
 

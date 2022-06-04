@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/03 16:50:49 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/04 14:26:05 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ typedef struct s_op
 
 // Main
 void		push_swap(char **arg);
+void		sort_less_than_five(t_stacks *stacks);
+void		sort_three(t_stacks *stacks);
+
 
 // Checks
 int			check_args(char **argv);
