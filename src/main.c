@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:29 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/04 15:15:13 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/05 19:28:46 by ronanpoder       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,29 +89,33 @@ void	sort_three(t_stacks	*stacks)
     if (c < b && b < a)
 	{
 		swap_a(stacks);
-		rotate_a(stacks, 1);
+		rrotate_a(stacks, 1);
 	}
 }
 
 void	sort_less_than_five(t_stacks *stacks)
 {
+	int	ret;
+
 	stacks->size_a = ft_lstsize(stacks->a);
 	indexing_a(stacks->a);
-
 	if (stacks->size_a == 2)
 		swap_a(stacks);
 	else if (stacks->size_a == 3)
 	{
 		sort_three(stacks);
-		//return ;
+		return ;
 	}
 	else
 	{
-		push_b(stacks);
-		push_b(stacks);
-		print_stacks(stacks);
+		mini_presort(stacks);
 		sort_three(stacks);
+		ret = main_sort(stacks);
+		if (!ret)
+		{
+			free_stacks(stacks);
+			return ;
+		}
+		last_sort(stacks);
 	}
-		print_stacks(stacks);
-
 }

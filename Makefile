@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+         #
+#    By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 17:38:32 by rpoder            #+#    #+#              #
-#    Updated: 2022/06/03 16:36:23 by rpoder           ###   ########.fr        #
+#    Updated: 2022/06/05 19:20:43 by ronanpoder       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRCS				:=	main.c \
 						moves/rrotate.c \
 						moves/swap.c \
 						pre_sort.c \
+						mini_presort.c \
 						main_sort.c \
 						main_sort_utils.c \
 						calculate_rotates.c \

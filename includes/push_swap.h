@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/04 14:26:05 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/05 19:36:04 by ronanpoder       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ typedef struct s_op
 void		push_swap(char **arg);
 void		sort_less_than_five(t_stacks *stacks);
 void		sort_three(t_stacks *stacks);
-
 
 // Checks
 int			check_args(char **argv);
@@ -100,6 +99,9 @@ void		swap_b(t_stacks *stacks);
 int			pre_sort(t_stacks *stacks);
 void		indexing_a(t_list *list);
 void		push_all_to_b(t_stacks *stacks);
+
+// Mini Presort
+void		mini_presort(t_stacks *stacks);
 
 // Main-sort
 int			main_sort(t_stacks *stacks);
