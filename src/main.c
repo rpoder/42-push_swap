@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:29 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/05 19:28:46 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2022/06/08 14:44:24 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,11 @@ void	push_swap(char **arg)
 	stacks = set_stacks();
 	stacks->a = fill_stack_a(arg);
 	if (check_double(stacks->a) || check_is_sorted(stacks->a))
+	{
+		free_stacks(stacks);
+		ft_putstr_fd("Error\n", 2);
 		return ;
+	}
 	if (ft_lstsize(stacks->a) <= 5)
 		sort_less_than_five(stacks);
 	else
