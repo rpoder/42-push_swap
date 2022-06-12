@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:29 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/08 14:44:24 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/12 19:50:02 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	int			is_malloced;
 
 	is_malloced = 0;
-	if (argc < 2)
+	if (argc < 3)
 		return (0);
 	if (argc == 2)
 	{
@@ -46,7 +46,9 @@ void	push_swap(char **arg)
 
 	stacks = set_stacks();
 	stacks->a = fill_stack_a(arg);
-	if (check_double(stacks->a) || check_is_sorted(stacks->a))
+	if (check_is_sorted(stacks->a))
+		return (free_stacks(stacks));
+	if (check_double(stacks->a))
 	{
 		free_stacks(stacks);
 		ft_putstr_fd("Error\n", 2);
@@ -59,10 +61,7 @@ void	push_swap(char **arg)
 		pre_sort(stacks);
 		ret = main_sort(stacks);
 		if (!ret)
-		{
-			free_stacks(stacks);
-			return ;
-		}
+			return (free_stacks(stacks));
 		last_sort(stacks);
 	}
 	free_stacks(stacks);
@@ -84,13 +83,13 @@ void	sort_three(t_stacks	*stacks)
 		rrotate_a(stacks, 1);
 		swap_a(stacks);
 	}
-    if (b < c && c < a)
+	if (b < c && c < a)
 		rotate_a(stacks, 1);
-    if (b < a && a < c)
+	if (b < a && a < c)
 		swap_a(stacks);
-    if (c < a && a < b)
+	if (c < a && a < b)
 		rrotate_a(stacks, 1);
-    if (c < b && b < a)
+	if (c < b && b < a)
 	{
 		swap_a(stacks);
 		rrotate_a(stacks, 1);
