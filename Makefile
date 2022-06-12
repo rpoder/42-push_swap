@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+         #
+#    By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 17:38:32 by rpoder            #+#    #+#              #
-#    Updated: 2022/06/05 19:20:43 by ronanpoder       ###   ########.fr        #
+#    Updated: 2022/06/12 20:33:03 by rpoder           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,9 +67,9 @@ $(LIBFT)			:
 endif
 
 $(OUTDIR)			:
-	mkdir $(OUTDIR)
-	mkdir $(OUTDIR)/moves
-	mkdir $(OUTDIR)/checks
+	mkdir -p $(OUTDIR)
+	mkdir -p $(OUTDIR)/moves
+	mkdir -p $(OUTDIR)/checks
 
 clean				:
 ifdef LIBFT
