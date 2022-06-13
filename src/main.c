@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:29 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/13 15:26:58 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/13 15:37:54 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	main(int argc, char **argv)
 	if (!check_args(arg))
 	{
 		ft_putstr_fd("Error\n", 2);
+		if (is_malloced == 1)
+			ft_free_double_tab(arg);
 		return (0);
 	}
 	push_swap(arg);
