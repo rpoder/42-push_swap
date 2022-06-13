@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:55 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/13 15:33:09 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/13 19:23:16 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int			ft_is_int(long int num);
 int			check_double(t_list *stack);
 int			check_is_sorted(t_list *stack);
 int			ft_is_only_sign(char *str);
+int			ft_isonlyspaces(char *str);
+
 
 /* Libft Addons */
 t_list		*ft_lstbeflast(t_list *lst);
