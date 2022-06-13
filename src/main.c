@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:35:29 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/12 19:50:02 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/13 15:26:58 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	int			is_malloced;
 
 	is_malloced = 0;
-	if (argc < 3)
+	if (argc < 2)
 		return (0);
 	if (argc == 2)
 	{
