@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:40:57 by rpoder            #+#    #+#             */
-/*   Updated: 2022/06/13 19:27:08 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/18 13:36:11 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int	check_args(char **argv)
 		return (0);
 	while (argv[i])
 	{
-		if (ft_strlen(argv[i]) > 11 || ft_strlen(argv[i]) == 0)
+		if (ft_strlen(argv[i]) == 0)
+			return (0);
+		if (ft_strlen(str_trim_zero_and_sign(argv[i])) > 11)
 			return (0);
 		if (ft_is_only_sign(argv[i]))
 			return (0);
@@ -68,7 +70,7 @@ int	ft_is_only_sign(char *str)
 
 int	ft_isonlyspaces(char *str)
 {
-	int	i;
+	int		i;
 	size_t	count;
 
 	i = 0;

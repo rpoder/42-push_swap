@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:13:39 by ronanpoder        #+#    #+#             */
-/*   Updated: 2022/06/13 15:31:09 by rpoder           ###   ########.fr       */
+/*   Updated: 2022/06/18 13:23:19 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,16 @@ void	ft_free_double_tab(char **tab)
 		i++;
 	}
 	free(tab);
+}
+
+char	*str_trim_zero_and_sign(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[0] == '+' || str[0] == '-')
+		i++;
+	while (str[i] || str[i] == '0')
+		i++;
+	return (str + i);
 }
